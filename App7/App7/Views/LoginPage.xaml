@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App7.Views.LoginPage"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             Title="ProyFinal Quiniela">
+    <ContentPage.Content>
+        <ScrollView
+            BindingContext="{Binding Login}">
+            
+            <StackLayout
+            Padding="10,20,10,5">
+
+                <Label
+                HorizontalTextAlignment="Center"
+                 FontSize="Large"
+                FontAttributes="Bold"
+                Text="Login"
+             />
+                <Image
+                WidthRequest="200"
+                Source="Rusia2018">
+
+                </Image>
+
+                <Grid
+                    Margin="10,0"
+                    VerticalOptions="CenterAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Text="EMail"
+                        VerticalOptions="Center">
+                    </Label>
+                    <Entry
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Keyboard="Email"
+                        Text="{Binding Email, Mode=TwoWay}"
+                        Placeholder="su correo">
+                    </Entry>
+                    <Label
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Text="Password"
+                        VerticalOptions="Center">
+                    </Label>
+                    <Entry
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        IsPassword="true"
+                        Text="{Binding Password, Mode=TwoWay}"
+                        Placeholder="su clave">
+                    </Entry>
+                </Grid>
+                <ActivityIndicator
+                    IsRunning="{Binding IsRunning, Mode=TwoWay}"
+                    VerticalOptions="CenterAndExpand">
+                </ActivityIndicator>
+                <Button
+                    Command="{Binding LoginCommand}"
+                    BorderRadius="23"
+                    BackgroundColor="Navy"
+                    Text="Login"
+                    TextColor="White">
+                </Button>
+                <Button
+                    Command="{Binding RegistroCommand}"
+                    BorderRadius="23"
+                    BackgroundColor="MediumPurple"
+                    Text="Registro"
+                    TextColor="White">
+                </Button>
+
+            </StackLayout>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>
